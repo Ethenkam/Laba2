@@ -1,5 +1,5 @@
 import unittest
-from validate_snils import validate_snils
+from validate_snils import *
 
 class TestValidateSnils(unittest.TestCase):
     
@@ -28,3 +28,11 @@ class TestValidateSnils(unittest.TestCase):
         
     def test_ok(self):
         self.assertTrue(validate_snils("161-394-864 82"))
+    def test_ok_file(self):
+        self.assertTrue(validate_snils_from_file("sample_snils.txt"))
+    def test_invalid_file(self):
+        self.assertFalse(validate_snils_from_file("invalid_file.txt"))
+    def test_from_url(self):
+        self.assertTrue(validate_snils_from_url("https://www.consultant.ru/document/cons_doc_LAW_167281/c2bc8375b3c705a61bdd1f284d9db2070929c0a7/"))
+    def test_invalid_from_urk(self):
+        self.assertFalse(validate_snils_from_url("https://edu.stankin.ru/course/view.php?id=11060"))
