@@ -33,6 +33,6 @@ class TestValidateSnils(unittest.TestCase):
     def test_invalid_file(self):
         self.assertFalse(validate_snils_from_file("invalid_file.txt"))
     def test_from_url(self):
-        self.assertTrue(validate_snils_from_url("https://www.consultant.ru/document/cons_doc_LAW_167281/c2bc8375b3c705a61bdd1f284d9db2070929c0a7/"))
+        self.assertTrue(validate_snils_from_url("https://pro-chislo.ru/validator/snils"))
     def test_invalid_from_urk(self):
         self.assertFalse(validate_snils_from_url("https://edu.stankin.ru/course/view.php?id=11060"))
